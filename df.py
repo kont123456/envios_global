@@ -1,6 +1,8 @@
 import pandas as pd
 
-df=pd.read_excel("C:\\Users\\luis\\Desktop\\PYTHOM PROGRAMAS\\Avanzado\\Plantilla.xlsx")
+
+url = 'https://github.com/kont123456/envios_global/raw/main/Plantilla.xlsx'
+df = pd.read_excel(url)
 df["Año"]=df["Fecha_envio"].dt.year.astype(str)
 df["Mes"]=df["Fecha_envio"].dt.month
 
