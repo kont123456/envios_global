@@ -3,3 +3,4 @@ pandas
 gunicorn
 openpyxl
 dash_bootstrap_components
+xlwings
