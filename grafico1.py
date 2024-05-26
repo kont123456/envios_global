@@ -337,7 +337,7 @@ layout=dbc.Container([
                   
                    html.A(
                        html.Img(src="/assets/wasa.png", alt="WhatsApp", id="whatsapp-img", style={"height": "115px"}),
-                        href="javascript:void(0);",  # Enlace vacío inicialmente
+                         # Enlace vacío inicialmente
                         id="whatsapp-button",
                         style={
                            "position": "fixed",
