@@ -49,66 +49,66 @@ layout=dbc.Container([
                dbc.CardBody([
                    dbc.Card([
                        dbc.Row([
-                           dbc.Col([
+                           dbc.Col(
                                html.I(className="fas fa-tags",style={"font-size":"25px","margin-top":"10px","margin-left":"10px","color":"orange"})
-                           ],md=2),
+                           ,md=2,xs=2,sm=2),
                           dbc.Col([
                                html.H6("Variacion % de pedidos"),
                                html.Label(f"{var_pedidos}% este mes")
                                         
-                          ],md=10)
+                          ],md=10,xs=10,sm=10)
                                     
                         ],style={"margin-top":"10px"})
                      ]),
                     dbc.Card([
                        dbc.Row([
-                           dbc.Col([
+                           dbc.Col(
                                html.I(className="fas fa-bell",style={"font-size":"25px","margin-top":"10px","margin-left":"10px","color":"blue"})
-                           ],md=2),
+                           ,md=2,xs=2,sm=2),
                           dbc.Col([
                                html.H6("Venta Total actual"),
                                html.Label(f"{vtas_mes:,.2f} este mes")
                                         
-                          ],md=10)
+                          ],md=10,xs=10,sm=10)
                                     
                         ],style={"margin-top":"10px"})
                      ],style={"margin-top":"12px"}),
                      dbc.Card([
                        dbc.Row([
-                           dbc.Col([
+                           dbc.Col(
                                html.I(className="fas fa-cart-arrow-down",style={"font-size":"25px","margin-top":"10px","margin-left":"10px","color":"green"})
-                           ],md=2),
+                           ,md=2,xs=2,sm=2),
                           dbc.Col([
                                html.H6("Cantidad de Pedidos"),
                                html.Label(f"{cat_pedido_mes} este mes")
                                         
-                          ],md=10)
+                          ],md=10,xs=10,sm=10)
                                     
                         ],style={"margin-top":"10px"})
                      ],style={"margin-top":"12px"}),
                     dbc.Card([
                        dbc.Row([
-                           dbc.Col([
+                           dbc.Col(
                                html.I(className="fas fa-cart-arrow-down",style={"font-size":"25px","margin-top":"10px","margin-left":"10px","color":"red"})
-                           ],md=2),
+                           ,md=2,xs=2,sm=2),
                           dbc.Col([
                                html.H6("Categoria mas Vendida"),
                                html.Label(f"{catg_vendida3} este mes")
                                         
-                          ],md=10)
+                          ],md=10,xs=10,sm=10)
                                     
                         ],style={"margin-top":"10px"})
                      ],style={"margin-top":"12px"}),
                      dbc.Card([
                        dbc.Row([
-                           dbc.Col([
+                           dbc.Col(
                                html.I(className="fas fa-credit-card",style={"font-size":"25px","margin-top":"10px","margin-left":"10px","color":"black"})
-                           ],md=2),
+                           ,md=2,xs=2,sm=2),
                           dbc.Col([
                                html.H6("N° de Clientes nuevos"),
                                html.Label(f"{cliente_nuevos}este mes")
                                         
-                          ],md=10)
+                          ],md=10,xs=10,sm=10)
                                     
                         ],style={"margin-top":"10px"})
                      ],style={"margin-top":"12px"})    

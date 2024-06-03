@@ -56,20 +56,20 @@ layout=dbc.Container([
                                   
                                   
                       )
-                    ],md=8),
+                    ],md=8,sm=8,xs=8),
                     dbc.Col([
                         dcc.Dropdown(
                                       id="listas",
                                       multi=False,
                                       clearable=False,
                                       options=seleccion,
-                                      style={"width":"110px","font-size":"14px","margin-top":"80px"},
+                                      style={"width":"85%","font-size":"12px","margin-top":"80px"},
                                      
                                      
                         )
-                    ],md=4)   
+                    ],md=4,xs=4,sm=4)   
                 ],style={"margin-top":"30px"})
-            ],style={"height":"395px","margin-left":"-10px","width":"450px"})
+            ],style={"height":"395px","margin-left":"-10px","width":"105%"})
 ],fluid=True)
 
 @app.callback(Output("tabla-grid","data"),

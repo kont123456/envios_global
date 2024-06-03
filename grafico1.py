@@ -11,6 +11,7 @@ from githubupdate import filter_commits, get_commit_history
 from df import df
 import pagina1,pagina2,pagina3
 
+
 main_config = {
     "hovermode": "x unified",
     "hoverlabel": {
@@ -36,228 +37,178 @@ card_style = {
 }
 
 layout=dbc.Container([
-           dbc.Row([
+            dbc.Row([
+                dbc.Col([
+                     dcc.Markdown("""
+                                    **Paginas / Graficos de Ventas**  
+                                      Graficos Ventas
+                                    """,style={"margin-left":"48px"})
+                 ], xs=12, sm=12, md=9),
                dbc.Col([
-                    html.Div([
-                        dbc.Row([
-                            dbc.Col([
-                                html.Label("Paginas / Graficos de Ventas")  
-                            ],md=8),
-                            dbc.Col([
-                               dbc.Button(
-                                   html.I(className="fas fa-user-alt",style={"margin-left":"-8px","color":"black"}),
-                               id="prof",style={"width":"25px","margin-left":"98px","background-color": "transparent"}),
-                               dbc.Popover([
-                                   dbc.PopoverHeader("Perfil Usuario"),
-                                   dbc.PopoverBody([
-                                       html.Label("Datos"),
-                                   
-                                    
-                                       dbc.Row([
-                                           dbc.Col(
-                                               html.H6("Usuario",style={"font-size":"13px"}),md=4
-                                           ),
-                                           dbc.Col(
-                                               html.H6("Luis Lopez CHavez",style={"font-size":"13px"})
-                                           )
-                                        ]),  
-                                        dbc.Row([
-                                           dbc.Col(
-                                               html.H6("Area",style={"font-size":"13px"}),md=4
-                                           ),
-                                           dbc.Col(
-                                               html.H6("Tesoreria",style={"font-size":"13px"})
-                                           )
-                                        ]),
-                                        dbc.Row([
-                                           dbc.Col(
-                                               html.H6("Email",style={"font-size":"13px"}),md=4
-                                           ),
-                                           dbc.Col(
-                                               html.H6("luisalbertt22@gmail.com",style={"font-size":"13px"})
-                                           )
-                                        ]),
-                                        dbc.Row([
-                                           dbc.Col(
-                                               html.H6("Celular",style={"font-size":"13px"}),md=4
-                                           ),
-                                           dbc.Col(
-                                               html.H6("993705286",style={"font-size":"13px"})
-                                           )    
-                                        ]),
-                                        dbc.Button("cerrar",id="borrar",color="danger", className="mt-2",size="sm")
-                                        
-                                          
-                                     ])
-                                   
-                                ],id="popover1",target="prof",is_open=False,placement='bottom',trigger="focus",style={"width":"320px"})
-                             ],md=1),
-                            dbc.Col([
-                                html.Label("Sign Out",style={'font-weight':'bold',"font-size":"17px","margin-top":"13px","margin-left":"42px"})
-                            ],md=1),
-                            dbc.Col([
-                                dbc.Button(
-                                    html.I(className="fas fa-cog",style={"margin-left":"-8px","color":"black"}),
-                                    id="icono",style={"width":"25px","margin-left":"32px","background-color": "transparent"}
-                                ),
-                                dbc.Popover([
-                                    dbc.PopoverHeader("Tema"),
-                                    dbc.PopoverBody([
-                                        dbc.Label("Seleciona un Tema"),
-                                        dcc.RadioItems(
-                                            id="seleccion",
-                                            options=[{"label":"Claro","value":"Claro"},
-                                                   {"label":"Oscuro","value":"Oscuro"}],
-                                            value="Claro",
-                                            labelStyle={"display":"block"}
-                                        ),
-                                        dbc.Button("cerrar",id="borrar",color="danger", className="mt-2",size="sm")
-                                    ])
-                                ],id="popover2",target="icono",is_open=False,placement='bottom')
-                            ],md=1),
-                            dbc.Col([
-                                dbc.Button(
-                                    html.I(className="fas fa-bell",style={"margin-left":"-8px","color":"black"}),id="historial",
-                                    style={"width":"25px","margin-left":"-19px","background-color": "transparent"}
-                                ),
-                                dbc.Popover([
-                                     dbc.PopoverHeader("Historial"),
-                                     dbc.PopoverBody(
-                                         "Ultimas Actualizacion"
-                                     )
-                                ],id="popover4",target="historial",trigger="focus",placement="bottom",is_open=False)
-                                
-                                 
-                            ],md=1)
-                                
-                        
-                               
-                          
-                        ])
+                   dbc.Row([
+                       dbc.Col([
+                            dbc.Button(
+                                    html.I(className="fas fa-user-alt", style={"color": "black","margin-left":"-8px"}),
+                                           id="prof", style={"background-color": "transparent","width":"25px"}
+                            ),
+                           dbc.Popover([
+                                  dbc.PopoverHeader("Perfil Usuario"),
+                                  dbc.PopoverBody([
+                                             html.Label("Datos"),
+                                             dbc.Row([
+                                             dbc.Col(html.H6("Usuario", style={"font-size": "13px"}), md=4),
+                                             dbc.Col(html.H6("Luis Lopez CHavez", style={"font-size": "13px"}))
+                                             ]),
+                                             dbc.Row([
+                                                 dbc.Col(html.H6("Area", style={"font-size": "13px"}), md=4),
+                                                 dbc.Col(html.H6("Tesoreria", style={"font-size": "13px"}))
+                                             ]),
+                                             dbc.Row([
+                                                 dbc.Col(html.H6("Email", style={"font-size": "13px"}), md=4),
+                                                 dbc.Col(html.H6("luisalbertt22@gmail.com", style={"font-size": "13px"}))
+                                             ]),
+                                             dbc.Row([
+                                                 dbc.Col(html.H6("Celular", style={"font-size": "13px"}), md=4),
+                                                 dbc.Col(html.H6("993705286", style={"font-size": "13px"}))
+                                              ]),
+                                              dbc.Button("cerrar", id="borrar", color="danger", className="mt-2", size="sm")
+                                   ])
+                            ], id="popover1", target="prof", is_open=False, placement='bottom', trigger="focus", style={"width": "320px"})
+                        ], xs=2, sm=2, md=1),
+                        dbc.Col([
+                             html.Label("    Sign Out", style={'font-weight': 'bold', "font-size": "13px", "margin-top": "13px"})
+                        ], xs=4, sm=4, md=3),
+                        dbc.Col([
+                            dbc.Button(
+                                    html.I(className="fas fa-cog", style={"color": "black","margin-left":"-8px"}),
+                                    id="icono", style={"background-color": "transparent","width":"25px"}
+                            ),
+                            dbc.Popover([
+                                  dbc.PopoverHeader("Tema"),
+                                  dbc.PopoverBody([
+                                  dbc.Label("Selecciona un Tema"),
+                                  dcc.RadioItems(
+                                        id="seleccion",
+                                        options=[{"label": "Claro", "value": "Claro"}, {"label": "Oscuro", "value": "Oscuro"}],
+                                        value="Claro",
+                                        labelStyle={"display": "block"}
+                                  ),
+                                   dbc.Button("cerrar", id="borrar", color="danger", className="mt-2", size="sm")
+                                  ])
+                             ], id="popover2", target="icono", is_open=False, placement='bottom')
+                        ], xs=3, sm=3, md=2),
+                        dbc.Col([
+                            dbc.Button(
+                            html.I(className="fas fa-bell", style={"color": "black","margin-left":"-8px"}), id="historial",
+                            style={"background-color": "transparent","width":"25px"}
+                             ),
+                            dbc.Popover([
+                                 dbc.PopoverHeader("Historial"),
+                                 dbc.PopoverBody(
+                                             "Ultimas Actualizacion"
+                                 )
+                            ], id="popover4", target="historial", trigger="focus", placement="bottom", is_open=False)
+                        ], xs=3, sm=3, md=3)
                     ])
-               ])
-           ],style={"margin-top":"10px"}),
-           
-           dbc.Row([
-               dbc.Col(
-                   html.Label("Graficos Ventas",style={"font-weight":"bold"})
-               )
-           ],style={"margin-top":"-30px"}),
+                ])
+            ],style={"margin-top": "10px"}),
            
            
-           dbc.Row([
-               dbc.Col([
-                   dbc.Card(
-                       dbc.CardBody([                      
-                           html.Label("Total Ventas",style={"margin-left":"110px"}),
-                           html.Legend("Total Ventas",id="total_ventas",style={"margin-left":"70px",'font-weight':'bold'})                        
-                       ]),style={"border-radius":"13px","width":"238px"}
-                   )   
-                 ],md=3),
+           
+            dbc.Row([
+                dbc.Col([
+                    dbc.Card(
+                        dbc.CardBody([                      
+                            html.Label("Total Ventas", style={"margin-left": "110px"}),
+                            html.Legend("Total Ventas", id="total_ventas", style={"margin-left": "70px", 'font-weight': 'bold'})                        
+                        ]), style={"border-radius": "13px", "width": "238px", "margin-top": "35px"}
+                     ),
+                    dbc.Card(
+                        dbc.CardBody(
+                              html.I(className="fas fa-dollar-sign", style={"font-size": "40px", "margin-top": "-7px"})
+                        ), style={"width": "60px", "margin-left": "10px", "border-radius": "13px", "height": "60px", "margin-top": "-115px"}
+                     )
+                ], xs=12, sm=12, md=6, lg=3, className="mb-4"),
+        
+                 dbc.Col([
+                     dbc.Card(
+                         dbc.CardBody([                      
+                             html.Label("Total Utilidad", style={"margin-left": "110px"}),
+                             html.Legend("Total Ventas", id="total_utilidad", style={"margin-left": "70px", 'font-weight': 'bold'})                        
+                        ]), style={"border-radius": "13px", "width": "238px", "margin-top": "35px"}
+                     ),
+                     dbc.Card(
+                          dbc.CardBody(
+                          html.I(className="fas fa-university", style={"font-size": "40px", "margin-top": "-7px", "margin-left": "-5px"})
+                          ), style={"width": "60px", "margin-left": "10px", "border-radius": "13px", "height": "60px", "margin-top": "-115px"}
+                      )
+                 ], xs=12, sm=12, md=6, lg=3, className="mb-4"),
+        
                 dbc.Col([
                    dbc.Card(
                        dbc.CardBody([                      
-                           html.Label("Total Utilidad",style={"margin-left":"110px"}),
-                           html.Legend("Total Ventas",id="total_utilidad",style={"margin-left":"70px",'font-weight':'bold','weight':'bold'})                        
-                       ]),style={"border-radius":"13px","width":"238px"}
-                   )   
-                ],md=3),
-                   dbc.Col([
+                            html.Label("Total Costo Envio", style={"margin-left": "76px"}),
+                           html.Legend("Total Ventas", id="total_envio", style={"padding-left": "53px", 'font-weight': 'bold'})                        
+                      ]), style={"border-radius": "13px", "width": "238px", "margin-top": "35px"}
+                   ),
                    dbc.Card(
-                       dbc.CardBody([                      
-                           html.Label("Total Costo envio",style={"margin-left":"76px"}),
-                           html.Legend("Total Ventas",id="total_envio",style={"padding-left":"53px",'font-weight':'bold'})                        
-                       ]),style={"border-radius":"13px","width":"238px"}
-                   )   
-                 ],md=3),
-                   dbc.Col([
-                   dbc.Card(
-                       dbc.CardBody([                      
-                           html.Label("Total Descuento",style={"margin-left":"75px"}),
-                           html.Legend("123",id="total_descuento",style={"text-align": "left","padding-left": "90px",'font-weight':'bold'})                        
-                       ]),style={"border-radius":"13px","width":"238px"}
-                   )   
-                ],md=3)
-           ],style={"margin-top":"35px"}),
+                        dbc.CardBody(
+                            html.I(className="fas fa-truck", style={"font-size": "40px", "margin-top": "-7px", "margin-left": "-9px"})
+                            ), style={"width": "60px", "margin-left": "10px", "border-radius": "13px", "height": "60px", "margin-top": "-115px"}
+                   )
+                ], xs=12, sm=12, md=6, lg=3, className="mb-4"),
+        
+                dbc.Col([
+                     dbc.Card(
+                         dbc.CardBody([                      
+                              html.Label("Total Descuento", style={"margin-left": "75px"}),
+                              html.Legend("123", id="total_descuento", style={"text-align": "left", "padding-left": "90px", 'font-weight': 'bold'})                        
+                        ]), style={"border-radius": "13px", "width": "238px", "margin-top": "35px"}
+                    ),
+                    dbc.Card(
+                          dbc.CardBody(
+                               html.I(className="fas fa-money-check-alt", style={"font-size": "40px", "margin-top": "-7px", "margin-left": "-10px"})
+                          ), style={"width": "60px", "margin-left": "10px", "border-radius": "13px", "height": "60px", "margin-top": "-115px"}
+                     )
+                 ], xs=12, sm=12, md=6, lg=3, className="mb-4")
+           ], className="gx-4 gy-4"),
            
            
-           dbc.Row([
-               dbc.Col([
-                   dbc.Card(
-                       dbc.CardBody(
-                           html.I(className="fas fa-dollar-sign",style={"font-size":"40px","margin-top":"-7px"})
-                       ),style={"width":"60px","margin-left":"10px","border-radius":"13px","height":"60px"}
-                   )
-               ],md=3),
-               dbc.Col([
-                   dbc.Card(
-                       dbc.CardBody(
-                           html.I(className="fas fa-university",style={"font-size":"40px","margin-top":"-7px","margin-left":"-5px"})
-                       ),style={"width":"60px","margin-left":"10px","border-radius":"13px","height":"60px"}
-                   )
-               ],md=3),
-               dbc.Col([
-                   dbc.Card(
-                       dbc.CardBody(
-                           html.I(className="fas fa-truck",style={"font-size":"40px","margin-top":"-7px","margin-left":"-9px"})
-                       ),style={"width":"60px","margin-left":"10px","border-radius":"13px","height":"60px"}
-                   )
-               ],md=3),
-               dbc.Col([
-                   dbc.Card(
-                       dbc.CardBody(
-                           html.I(className="fas fa-money-check-alt",style={"font-size":"40px","margin-top":"-7px","margin-left":"-10px"})
-                       ),style={"width":"60px","margin-left":"10px","border-radius":"13px","height":"60px"}
-                   )
-               ],md=3)
-               
-           ],style={"margin-top":"-115px"}),
            
          
            
            dbc.Row([
                dbc.Col([
-                   dbc.Card([
-                       dbc.CardBody([
-                       html.H5("Total Ventas"),
-                       
-                       
-                      ],style={"padding-top": "240px","padding-left":"30px"})
-                    ],style={"height":"400px", **card_style})
-               ],md=4),
+                   dbc.Card(
+                      dbc.CardBody([
+                           html.H5("Total Ventas")
+                       ]), style={"height": "380px", "padding-top": "240px", "padding-left": "30px","margin-top":"60px", **card_style}
+                   ),
+                   dcc.Graph(id="barra1", style={"height": "250px", 'borderRadius': '15px', 'overflow': 'hidden', "width": "90%", "margin-left": "20px","margin-top":"-400px"})
+               ], xs=12, sm=12, md=6, lg=4, className="mb-4"),
+
                 dbc.Col([
-                   dbc.Card([
-                        dbc.CardBody(
-                        html.H5("Total Utilidad")
-                       )
-                   ],style={"height":"400px", **card_style})
-               ],md=4),
-                 dbc.Col([
-                   dbc.Card([
-                         dbc.CardBody(
-                         html.H5("Total Envio")
-                         )
-                   ],style={"height":"400px", **card_style})
-               ],md=4)
-           ],style={"margin-top":"120px"}),
-           
-           
-            dbc.Row([
+                    dbc.Card(
+                        dbc.CardBody([
+                            html.H5("Total Utilidad")
+                        ]), style={"height": "380px", "margin-top":"60px",**card_style}
+                     ),
+                     dcc.Graph(id="barra2", style={"height": "250px", 'borderRadius': '15px', 'overflow': 'hidden',"width": "90%", "margin-left": "20px","margin-top":"-400px"})
+                ], xs=12, sm=12, md=6, lg=4, className="mb-4"),
+
                dbc.Col([
-                    dcc.Graph(id="barra1",style={"height":"250px",'borderRadius': '15px', 'overflow': 'hidden',"width":"320px","margin-left":"20px"}),       
-               ],md=4),
+                     dbc.Card(
+                          dbc.CardBody([
+                          html.H5("Total Envio")
+                          ]), style={"height": "380px","margin-top":"60px", **card_style}
+                     ),
+                     dcc.Graph(id="circulo", style={"height": "250px", 'borderRadius': '15px', 'overflow': 'hidden', "width": "90%", "margin-left": "20px","margin-top":"-400px"})
+              ], xs=12, sm=12, md=6, lg=4, className="mb-4")
+          ], style={"margin-top": "50px"}),
+          
+           
+          dbc.Row([
                dbc.Col([
-                    dcc.Graph(id="barra2",style={"height":"250px",'borderRadius': '15px', 'overflow': 'hidden',"width":"320px","margin-left":"20px"})
-               ],md=4),
-               dbc.Col([
-                    dcc.Graph(id="circulo",style={"height":"250px",'borderRadius': '15px', 'overflow': 'hidden',"width":"320px","margin-left":"20px"})
-               ],md=4)
-           ],style={"margin-top":"-430px"}),
-           
-           
-           
-           dbc.Row([
-              dbc.Col([
            
                 dash_table.DataTable(
                     id="datatable-agrupada",
@@ -302,15 +253,17 @@ layout=dbc.Container([
              
              dbc.Col([           
               
-                               dbc.Card(
+                         dbc.Card(
                                dbc.CardBody([
                                       dbc.Row([
-                                             dbc.Col(html.H4("Páginas",style={"font-size":"13px","margin-top":"-20px"}), width="auto"),  # Texto "Páginas"
+                                             dbc.Col(html.H4("",style={"font-size":"13px","margin-top":"-20px"}
+                                                             ),md=1,sm=2,xs=2),  # Texto "Páginas"
+                                                   
                                              dbc.Col([
-                                                   dbc.Button("Página 1", id="btn-1", color="primary", className="mr-1",style={"margin-top": "-27px","height": "27px","margin-right": "6px", "font-size": "12px","padding": "6px 22px"}),
-                                                   dbc.Button("Página 2", id="btn-2", color="primary", className="mr-1",style={"margin-top": "-27px","height": "27px","margin-right": "6px", "font-size": "12px","padding": "6px 22px"}),
-                                                   dbc.Button("Página 3", id="btn-3", color="primary", className="mr-1",style={"margin-top": "-27px","height": "27px","margin-right": "6px", "font-size": "12px","padding": "6px 22px"}),
-                                              ], width="auto")
+                                                   dbc.Button("Pág-1", id="btn-1", color="primary", className="mr-1",style={"margin-top": "-27px","height": "27px","margin-left": "2px", "font-size": "65%","padding": "6px 22px","width":"30%"}),
+                                                   dbc.Button("Pág-2", id="btn-2", color="primary", className="mr-1",style={"margin-top": "-27px","height": "27px","margin-left": "2px", "font-size": "65%","padding": "6px 22px","width":"30%"}),
+                                                   dbc.Button("Pág-3", id="btn-3", color="primary", className="mr-1",style={"margin-top": "-27px","height": "27px","margin-left": "2px", "font-size": "65%","padding": "6px 22px","width":"30%"}),
+                                              ],md=11,sm=11,xs=11)
                                        ], align="center"),
                                 ]),
                                 style={"background-color": "black", "color": "white", "padding": "10px","height":"50px"}
@@ -337,7 +290,7 @@ layout=dbc.Container([
                   
                    html.A(
                        html.Img(src="/assets/wasa.png", alt="WhatsApp", id="whatsapp-img", style={"height": "115px"}),
-                        href="javascript:void(0);",  # Enlace vacío inicialmente
+                         # Enlace vacío inicialmente
                         id="whatsapp-button",
                         style={
                            "position": "fixed",
@@ -389,7 +342,7 @@ layout=dbc.Container([
     
     
                 
- ])
+ ],fluid=True,style={"margin-top":"-50px"})
 
 @app.callback( Output("popover2","is_open"),
                [Input("icono","n_clicks"),

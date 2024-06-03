@@ -69,9 +69,9 @@ layout=dbc.Container([
                         dbc.Col([
                               dcc.Graph(
                                     id="barra",
-                                     style={"height":"320px",'borderRadius': '15px', 'overflow': 'hidden',"width":"400px"}
+                                     style={"height":"320px",'borderRadius': '15px', 'overflow': 'hidden',"width":"160%"}
                               ),
-                         ],md=8),   
+                         ],md=8,xs=8,sm=8),   
                         dbc.Col([   
                               dcc.Dropdown(
                                   id="lista",
@@ -87,7 +87,7 @@ layout=dbc.Container([
                         ],md=4)
                    ])
               ])
-          ],style={"height":"390px"})    
+          ],style={"height":"390px","width":"100%"})    
               
 ])
 

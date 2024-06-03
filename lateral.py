@@ -14,11 +14,11 @@ layout= dbc.Container([
                       dbc.Card([
                           dbc.Row([
                               dbc.Col([
-                                   html.I(className="fas fa-th",style={"margin-left":"18px","font-size":"30px","color":"white"})
-                              ],md=2),
+                                   html.I(className="fas fa-th",style={"margin-left":"18px","font-size":"30px","color":"white","width":"100%"})
+                              ],md=2,xs=2,sm=2),
                               dbc.Col([
-                                  html.Label("Ventas Totales",style={"margin-left":"20px","font-size":"18px","color":"white"})
-                              ])
+                                  html.Label("Ventas Totales",style={"margin-left":"20px","font-size":"18px","color":"white","width":"100%"})
+                              ],sm=8,xs=8)
                           ],style={"margin-top":"30px"}),
                           dbc.Row(
                               html.Legend("Filtros",style={"margin-left":"20px","font-size":"15px","color":"white"}),
@@ -26,7 +26,7 @@ layout= dbc.Container([
                           dbc.Row([
                               dbc.Col([
                                   html.I(className="far fa-dot-circle",style={"margin-left":"18px","font-size":"20px","color":"white","margin-top":"30px"})
-                              ],md=3),
+                              ],md=3,xs=3,sm=3),
                               dbc.Col([
                                   html.Label("Productos",style={"margin-left":"20px","font-size":"15px","color":"white"}),
                                   dcc.Dropdown(
@@ -42,7 +42,7 @@ layout= dbc.Container([
                           dbc.Row([
                               dbc.Col([
                                   html.I(className="far fa-dot-circle",style={"margin-left":"18px","font-size":"20px","color":"white","margin-top":"30px"})
-                              ],md=3),
+                              ],md=3,xs=3,sm=3),
                               dbc.Col([
                                   html.Label("Empaque",style={"margin-left":"20px","font-size":"15px","color":"white"}),
                                   dcc.Dropdown(
@@ -58,7 +58,7 @@ layout= dbc.Container([
                           dbc.Row([
                               dbc.Col([
                                   html.I(className="far fa-dot-circle",style={"margin-left":"18px","font-size":"20px","color":"white","margin-top":"30px"})
-                              ],md=3),
+                              ],md=3,xs=3,sm=3),
                               dbc.Col([
                                   html.Label("Pais",style={"margin-left":"20px","font-size":"15px","color":"white"}),
                                   dcc.Dropdown(
@@ -79,10 +79,10 @@ layout= dbc.Container([
                                       dbc.NavLink([html.I(className="fa fa-globe"),"   Ventas Paises"],href="/grafico2",active="exact",style={"borderRadius": "15px"})
                                   ],vertical=True,pills=True,id="nav-link",style={"width": "210px","margin-left":"10px","textAlign": "center"})
                               ])
-                          ],style={"margin-top":"40px"})
+                          ],style={"margin-top":"40px","width":"100%"})
                           
                           
-                      ],style={"height":"780px","margin-left":"-20px","margin-top":"10px","border-radius":"20px","width":"230px","background-color":"black"}),   
+                      ],style={"height":"780px","margin-left":"-20px","margin-top":"-20px","border-radius":"20px","width":"230px","background-color":"black"}),   
                  ])
                
                  
