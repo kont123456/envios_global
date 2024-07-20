@@ -115,4 +115,6 @@ def actualizar_barra(valores):
             figura.update_layout(plot_bgcolor="#F7B329",paper_bgcolor="#F7B329",title={'text': '<b style="color: white;">Segmento<br>2022</b>','y':0.92})
             figura.update_yaxes(domain=[0, 0.85])# espacio titulo y grafico barra
             
+            
+            
     return figura         

@@ -84,5 +84,5 @@ def display_page(pathname):
         return grafico2.layout
     # Puedes continuar agregando más páginas aquí
 
-if __name__ == '__main__':
-    app.run_server(debug=True)
+if __name__== '__main__':
+   app.run_server(port=8052,debug=True)

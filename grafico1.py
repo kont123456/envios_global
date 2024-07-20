@@ -260,7 +260,7 @@ layout=dbc.Container([
                                                              ),md=1,sm=2,xs=2),  # Texto "Páginas"
                                                    
                                              dbc.Col([
-                                                   dbc.Button("Pág-1", id="btn-1", color="primary", className="mr-1",style={"margin-top": "-27px","height": "27px","margin-left": "2px", "font-size": "65%","padding": "6px 22px","width":"30%"}),
+                                                   dbc.Button("Pág-1", id="btn-1", color="primary",style={"margin-top": "-27px","height": "27px","margin-left": "2px", "font-size": "65%","padding": "6px 22px","width":"30%"}),
                                                    dbc.Button("Pág-2", id="btn-2", color="primary", className="mr-1",style={"margin-top": "-27px","height": "27px","margin-left": "2px", "font-size": "65%","padding": "6px 22px","width":"30%"}),
                                                    dbc.Button("Pág-3", id="btn-3", color="primary", className="mr-1",style={"margin-top": "-27px","height": "27px","margin-left": "2px", "font-size": "65%","padding": "6px 22px","width":"30%"}),
                                               ],md=11,sm=11,xs=11)
