@@ -5,3 +5,4 @@ openpyxl
 dash_bootstrap_components
 xlwings
 dash_ag_grid
+gunicorn
